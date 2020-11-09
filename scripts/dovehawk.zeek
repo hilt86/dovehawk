@@ -36,7 +36,7 @@ export {
 
 function request2curl(r: ActiveHTTP::Request, bodyfile: string, headersfile: string): string
 {
-	local cmd = fmt("curl --header \"Authorization: %s\" -s -g -o \"%s\" -D \"%s\" -X \"%s\"",
+	local cmd = fmt("curl --header \"Authorization: %s\" -s -k -g -o \"%s\" -D \"%s\" -X \"%s\"",
 			safe_shell_quote(dovehawk::APIKEY),
 	                safe_shell_quote(bodyfile),
 	                safe_shell_quote(headersfile),
